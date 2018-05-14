@@ -8,10 +8,10 @@ RUN \
   git clone https://github.com/mailru/graphite-nginx-module.git && \
   cd /nginx-1.9.2 && patch -p1 < /graphite-nginx-module/graphite_module_v1_7_7.patch && \
   ./configure --add-module=/graphite-nginx-module && make && make install && \
+  useradd -m nginx && \
   rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz
 
-COPY start.sh /start.sh
-
 EXPOSE 80
+USER nginx
 
-CMD ["/start.sh"]
+CMD ["/usr/local/bin/nginx"]
