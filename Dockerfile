@@ -7,7 +7,7 @@ RUN \
   tar xzf /nginx-sources.tar.gz && \
   git clone https://github.com/mailru/graphite-nginx-module.git && \
   cd /nginx-1.9.2 && patch -p1 < /graphite-nginx-module/graphite_module_v1_7_7.patch && \
-  ./configure --add-module=/graphite-nginx-module && make && make install && \
+  ./configure --with-http_ssl_module --add-module=/graphite-nginx-module && make && make install && \
   useradd -m nginx && \
   chown :nginx /usr/local/nginx && \
   chmod 0770 /usr/local/nginx && \
