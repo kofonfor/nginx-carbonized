@@ -12,7 +12,7 @@ RUN \
   chown :nginx /usr/local/nginx && \
   chmod 0770 /usr/local/nginx && \
   rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz && \
-  rm -rf /graphite-nginx-module && mkdir /etc/nginx
+  rm -rf /graphite-nginx-module && mkdir /etc/nginx && mkdir /etc/letsencrypt
 
 EXPOSE 80
 USER root
