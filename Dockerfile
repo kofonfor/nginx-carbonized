@@ -11,9 +11,10 @@ RUN \
   useradd -m nginx && \
   chown :nginx /usr/local/nginx && \
   chmod 0770 /usr/local/nginx && \
-  rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz
+  rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz && \
+  rm -rf /graphite-nginx-module && mkdir /etc/nginx
 
 EXPOSE 80
 USER root
 
-CMD /usr/local/nginx/sbin/nginx -g 'daemon off;'
+CMD /usr/local/nginx/sbin/nginx -c /etc/nginx/nginx.conf -g 'daemon off;'
