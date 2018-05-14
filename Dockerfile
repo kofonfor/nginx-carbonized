@@ -9,6 +9,8 @@ RUN \
   cd /nginx-1.9.2 && patch -p1 < /graphite-nginx-module/graphite_module_v1_7_7.patch && \
   ./configure --add-module=/graphite-nginx-module && make && make install && \
   useradd -m nginx && \
+  chown :nginx /usr/local/nginx && \
+  chmod 0770 /usr/local/nginx && \
   rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz
 
 EXPOSE 80
