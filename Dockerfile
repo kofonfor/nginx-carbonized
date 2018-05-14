@@ -14,4 +14,4 @@ RUN \
 EXPOSE 80
 USER nginx
 
-CMD ["/usr/local/bin/nginx"]
+CMD ["/usr/local/nginx/sbin/nginx"]
