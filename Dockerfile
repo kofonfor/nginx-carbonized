@@ -14,6 +14,6 @@ RUN \
   rm -rf /nginx-1.9.2 && rm -rf /nginx-sources.tar.gz
 
 EXPOSE 80
-USER nginx
+USER root
 
 CMD ["/usr/local/nginx/sbin/nginx"]
